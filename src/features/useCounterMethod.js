@@ -30,7 +30,6 @@ export const useCounterMethod = () => {
     add,
     minus
   } */
-  console.log(numToAddOrSubtract)
   return {
     numToAddOrSubtract,
     counterValue,
