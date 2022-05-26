@@ -10,22 +10,14 @@
   </div>
 </template>
 <script>
-import { reactive, toRefs } from "vue"
+import { useCounterMethod } from "@/features/useCounterMethod.js"
 export default {
   name: "Counter",
   setup () {
-    const state = reactive({
-      numToAddOrSubtract: 1,
-      counterValue: 0
-    })
-    function add () {
-      state.counterValue += state.numToAddOrSubtract
-    }
-    function minus () {
-      state.counterValue -= state.numToAddOrSubtract
-    }
+    const { numToAddOrSubtract, counterValue, add, minus } = useCounterMethod()
     return {
-      ...toRefs(state),
+      numToAddOrSubtract,
+      counterValue,
       add,
       minus
     }
